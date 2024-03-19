@@ -21,7 +21,7 @@ public class ControlStructures : MonoBehaviour
         //    Debug.Log(j);
         //}
 
-        for (int k = 1; k <= 10; k++)
+       /* for (int k = 1; k <= 10; k++)
         {
             float number = Mathf.Pow(k, 2);
             Debug.Log(number);
@@ -34,7 +34,7 @@ public class ControlStructures : MonoBehaviour
             {
                 Debug.Log("páratlan = " + m);
             }
-        }
+        }*/
     }
     void Update() //minden képfrissítéskor lefut
     {

@@ -6,15 +6,15 @@ public class BoolFunctions : MonoBehaviour
 {
     void Start()
     {
-        bool b1 = true;
-        bool b2 = false;
+        // bool b1 = true;
+        //bool b2 = false;
 
         float a = 12, b = 33.5f;
 
         bool aIsHigherThanB = a > b;
         bool aIsLowerThanB = a < b;
-        bool isEqual = a == b; //egyenlõ-e hamis
-        bool isNotEqual = a != b; //nem egyenlõ-e igaz
+        bool isEqual = a == b; //egyenlï¿½-e hamis
+        bool isNotEqual = a != b; //nem egyenlï¿½-e igaz
 
         a = 12;
         b = 12;
@@ -27,7 +27,7 @@ public class BoolFunctions : MonoBehaviour
         bool equals = "Hello" == "Haho"; //F
         Debug.Log(equals);
 
-        //---- tudunk lõni?
+        //---- tudunk lï¿½ni?
         int ammo = 10;
         bool haveGun = true;
 
@@ -40,9 +40,9 @@ public class BoolFunctions : MonoBehaviour
 
         bool canJump = isOnGround || canAirJump;
 
-        //*****házinak írni 1-1 pédát
+        //*****hï¿½zinak ï¿½rni 1-1 pï¿½dï¿½t
 
-        bool isInTheAir = !isOnGround;// Negálás
+        bool isInTheAir = !isOnGround;// Negï¿½lï¿½s
     }
 
 }
