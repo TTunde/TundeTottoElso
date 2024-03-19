@@ -25,7 +25,6 @@ public class Homework5 : MonoBehaviour
             else if (i % 5 == 0)
             {
                 Debug.Log("Buzz");
-
             }
             else if (i % 3 == 0 )
             {

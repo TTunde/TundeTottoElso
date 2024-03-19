@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Homework1OsszeadasSzovegese : MonoBehaviour
+public class Homework1OsszeadasSzovegesen : MonoBehaviour
 {
     /*
     - **Összeadás szövegesen**
@@ -12,8 +12,10 @@ public class Homework1OsszeadasSzovegese : MonoBehaviour
     */
     [SerializeField] int a;
     [SerializeField] int b;
+    [SerializeField] string r;
     void Start()
     {
         Debug.Log(a + "+" + b + "=" + (a + b));
+       r =  $"{a} + {b} = {a + b}";
     }
 }

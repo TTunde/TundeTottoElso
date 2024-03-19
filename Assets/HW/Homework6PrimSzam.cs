@@ -15,6 +15,7 @@ public class Homework6PrimSzam : MonoBehaviour
     //Írj programot, ami egy bemeneti egész számról eldönti és kiírja, hogy prím-e.
 
     [SerializeField] int number;
+    [SerializeField] bool primE = true;
     void Start()
     {
         int i = 2;
@@ -31,5 +32,14 @@ public class Homework6PrimSzam : MonoBehaviour
             Debug.Log(number + " N-Prímszám");
         }
 
+
+        for (int j = 1; j < number; j++)
+        {
+            if (number % j == 0)
+            {
+                primE = false;
+                break;
+            }
+        }
     }
 }
