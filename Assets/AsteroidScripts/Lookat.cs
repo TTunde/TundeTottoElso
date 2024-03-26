@@ -7,6 +7,7 @@ public class Lookat : MonoBehaviour
 {
     [SerializeField] Transform toLookAt;
     [SerializeField] float speed;
+    [SerializeField] float angularSpeed = 360;
 
     void Update()
     {
@@ -18,7 +19,9 @@ public class Lookat : MonoBehaviour
 
         if (direction != Vector3.zero)
         {
-        transform.rotation = Quaternion.LookRotation(direction);
+        //transform.rotation = Quaternion.LookRotation(direction);
+        Quaternion targetDirection = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetDirection, angularSpeed * Time.deltaTime);
         }
         /*
         Vector3 step = direction * speed * Time.deltaTime;
@@ -33,5 +36,6 @@ public class Lookat : MonoBehaviour
         transform.position = Vector3.MoveTowards(self, other, speed* Time.deltaTime); //3 paraméter, mi a kiindulópont, cél pozíció, maxlépéstáv 
         //ha valamit közelíteni akarok valami máshoz túllépés nélkül akkor ezt kell használni
         //transform.position += step;
+
     }
 }
