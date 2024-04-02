@@ -4,7 +4,7 @@ public class Spaceship : MonoBehaviour
 {
 
     [SerializeField] float maxSpeed = 5;
-    [SerializeField] float angularSpeed = 180;
+    [SerializeField] float angularSpeed = 180; //fordulási szög
     [SerializeField] float accelerate = 10; //gyorsulás
 
     Vector3 velocity; //sebesség
@@ -16,7 +16,7 @@ public class Spaceship : MonoBehaviour
 
 
 
-        velocity += transform.up * y * accelerate *  Time.deltaTime;
+        velocity += transform.up * y * accelerate * Time.deltaTime;
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
         /*
          //if (velocity.magnitude > maxSpeed)
@@ -32,7 +32,7 @@ public class Spaceship : MonoBehaviour
         // direction.Normalize();
 
 
-        Vector3 step = velocity *  Time.deltaTime; // kivettük a speedet
+        Vector3 step = velocity * Time.deltaTime; // kivettük a speedet
         transform.position += step;
 
         transform.Rotate(0, 0, angularSpeed * x * Time.deltaTime * -1); //vagy lehet itt -x is de akkor nem kell -1-el szorozni
@@ -41,14 +41,14 @@ public class Spaceship : MonoBehaviour
         //ez nem múködik 2 D-ben
 
         //float rotation2D = transform.rotation.eulerAngles.z; //3D - bõl 2 Dbe
-       /* if (direction != Vector3.zero)
-        {
-            float rotation2D = transform.rotation.eulerAngles.z; //3D - bõl 2 Dbe
-            float targetRotation = -Mathf.Atan2(direction. x,direction.y) * MathfRad2Deg; //mekkora szöget zár be és összehasonlítjuk a második paraméterrel
-            float nextRotation = Mathf.MoveTowardsAngle(rotation2D, targetRotation, angularSpeed * Time.deltaTime); // megteszi a legrövidebb utat
-            transform.rotation = Quaternion.Euler(0,0,nextRotation); // 2Dbõl 3Dbe - ez legyárt nekünk egy quaterniont
-        }
-       */
+        /* if (direction != Vector3.zero)
+         {
+             float rotation2D = transform.rotation.eulerAngles.z; //3D - bõl 2 Dbe
+             float targetRotation = -Mathf.Atan2(direction. x,direction.y) * MathfRad2Deg; //mekkora szöget zár be és összehasonlítjuk a második paraméterrel
+             float nextRotation = Mathf.MoveTowardsAngle(rotation2D, targetRotation, angularSpeed * Time.deltaTime); // megteszi a legrövidebb utat
+             transform.rotation = Quaternion.Euler(0,0,nextRotation); // 2Dbõl 3Dbe - ez legyárt nekünk egy quaterniont
+         }
+        */
 
         //step *= Time.deltaTime;
         //step *= speed;
