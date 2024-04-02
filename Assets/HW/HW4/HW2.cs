@@ -22,7 +22,7 @@ public class HW2 : MonoBehaviour
             target += Vector3.left;
 
         Vector3 selfPos = transform.position;
-        transform.position = Vector3.MoveTowards(selfPos, target, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(selfPos, target, speed * Time.deltaTime); // honnan, hova, hogyan
     }
 
 }

@@ -32,4 +32,34 @@ public class HW4 : MonoBehaviour
         // hogy egy frame alatti utat tegye csak meg
         transform.position += movement * (Time.deltaTime * speed);
     }
+    /*
+     using UnityEngine;
+
+public class FollowClosest : MonoBehaviour
+{
+    [SerializeField] Transform target1, target2;
+    [SerializeField] float speed;
+
+    void Update()
+    {
+        Vector3 selfPos = transform.position;
+        float d1 = Vector3.Distance(target1.position, selfPos);
+        float d2 = Vector3.Distance(target2.position, selfPos);
+
+
+    //Vector3 targetPositon = d1 < d2 ? target1.poition : target2.position; ---ez is jó
+
+
+        Transform target;
+        if (d1 < d2)
+            target = target1;
+        else
+            target = target2;
+
+        transform.position =
+            Vector3.MoveTowards(selfPos, target.position, speed * Time.deltaTime);
+    }
+
+}
+*/
 }

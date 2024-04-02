@@ -42,6 +42,30 @@ public class HW1 : MonoBehaviour
         }
 
     }
+    /*
+     using UnityEngine;
+
+    public class Jumper : MonoBehaviour
+    {
+    [SerializeField] KeyCode rightKey = KeyCode.RightArrow;
+    [SerializeField] KeyCode leftKey = KeyCode.LeftArrow;
+    [SerializeField] KeyCode upKey = KeyCode.UpArrow;
+    [SerializeField] KeyCode downKey = KeyCode.DownArrow;
+
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+                transform.position += Vector3.right;
+            if (Input.GetKeyDown(leftKey))
+                transform.position += Vector3.left;
+            if (Input.GetKeyDown(upKey))
+                transform.position += Vector3.up;
+            if (Input.GetKeyDown(downKey))
+                transform.position += Vector3.down;
+        }
+    }
+
+     */
 
 
 }

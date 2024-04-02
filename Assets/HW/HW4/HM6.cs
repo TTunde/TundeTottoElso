@@ -31,5 +31,8 @@ public class HM6 : MonoBehaviour
         // Elforgatjuk az objektumot a cél felé az elfordulási sebesség és az idõintervallum alapján
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, angularSpeed * Time.deltaTime);
     }
+    /*
+     
+     */
 }
 
