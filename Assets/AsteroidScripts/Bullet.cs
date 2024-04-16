@@ -4,8 +4,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] float Speed;
     [SerializeField] float lifeTime = 2;
-    float time;
     [SerializeField] int damage = 10;
+    float time;
 
 
     private void Start()
@@ -43,7 +43,7 @@ public class Bullet : MonoBehaviour
         HealthObject healthObject = other.GetComponent<HealthObject>(); //ha nem talál semmit akkor NULL értéket ad vissza
         if (healthObject != null)
         {
-            healthObject.currentHp -= damage;
+            healthObject.Damage(damage);
             Destroy(gameObject);
         }
     }

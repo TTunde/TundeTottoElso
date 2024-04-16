@@ -4,18 +4,27 @@ public class HealthObject : MonoBehaviour
 {
 
     [SerializeField] int startHp;
-    public int currentHp;
+    [SerializeField] int collisionDamage;
+    int currentHp;
 
     void Start()
     {
         currentHp = startHp;
     }
-    private void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (currentHp <=0 )
+        Damage(collisionDamage);
+    }
+    public void Damage(int damage)
+    {
+        damage = damage < 0 ? 0 : damage;
+        currentHp -= damage;
+        if (currentHp <= 0)
         {
             Destroy(gameObject);
         }
     }
+
+
 
 }

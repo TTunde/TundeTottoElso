@@ -8,13 +8,20 @@ public class Spaceship : MonoBehaviour
     [SerializeField] float accelerate = 10; //gyorsulás
     [SerializeField] float drag = 0.5f; //
 
+
     Vector3 velocity; //sebesség
+
+    private void Start()
+    {
+       // rb = GetComponent<Rigidbody2D>();
+    }
     private void Update()
     {
         float x = Input.GetAxisRaw("Horizontal"); //-1 és 1 közötti értéket kérdezek le, de ha RAW-t rakunk mellé akkor 0 v 1
 
         Vector3 step = velocity * Time.deltaTime; // kivettük a speedet , mozgás
         transform.position += step; // mozgás
+
 
         transform.Rotate(0, 0, angularSpeed * x * Time.deltaTime * -1); //vagy lehet itt -x is de akkor nem kell -1-el szorozni
     }
