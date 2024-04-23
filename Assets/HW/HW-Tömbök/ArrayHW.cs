@@ -27,6 +27,8 @@ public class ArrayHW : MonoBehaviour
     [SerializeField] string[] tombTeszt = { "D", "E", "E", "E", "E" };
     [SerializeField] string[] tomb3;
 
+    [SerializeField] Transform[] objects;
+
     private void OnValidate()
     {
         atlag = Atlagszamitas(numbers);
@@ -44,8 +46,44 @@ public class ArrayHW : MonoBehaviour
         fibonacciTomb = FibonacciSor(10);
         string[] tomb = new string[tomb1.Length + tomb2.Length];
         tomb3 = StringekOsszefuzese(tomb1, tombTeszt);
+
+        Closest(objects);
     }
 
+
+    private void OnDrawGizmos()
+    {
+        Target t = FindAnyObjectByType<Target>();
+        
+        /*
+         * Transform t = Closest(objects);
+        if (t != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, t.position);
+        }
+        */
+    }
+
+
+    //visszatér a hozzánk legközelebb található object-el
+    Transform Closest(Component[] obejcts)//Transform típus is lehetne, de a componens tágabb
+    {
+        float minDistance = float.MaxValue;
+        Transform closest = null;
+        Vector3 self = transform.position;
+
+        for (int i = 0; i < obejcts.Length; i++)
+        {
+            float distance = (self - obejcts[i].transform.position).magnitude;
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closest = obejcts[i].transform;
+            }
+        }
+        return closest;
+    }
     //Írj metódust, ami kiszámolja egy paraméterben kapott 
     //float tömb elemeinek átlagát és visszatér az eredménnyel!
 
@@ -66,8 +104,8 @@ public class ArrayHW : MonoBehaviour
      */
     float MinFuggveny(float[] tomb)
     {
-        float min = tomb[1];
-        for (int i = 0; i < tomb.Length; i++)
+        float min = tomb[0]; // itt viszont mindig meg kell nézni, hogy létezik-e a tömb első eleme
+        for (int i = 1; i < tomb.Length; i++)
         {
             if (numbers[i] < min)
             {
@@ -77,10 +115,11 @@ public class ArrayHW : MonoBehaviour
         return min;
     }
 
+
     float MaxFuggveny(float[] tomb)
     {
-        float max = tomb[1];
-        for (int i = 0; i < tomb.Length; i++)
+        float max = tomb[0];
+        for (int i = 1; i < tomb.Length; i++)
         {
             if (numbers[i] > max)
             {
