@@ -237,6 +237,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHp: 200
   collisionDamage: 0
+  mySpriteRenderer: {fileID: 1925369254944411476}
+  mySprites:
+  - {fileID: 21300000, guid: 334d18a3b96b7204c8698ceea40bdd27, type: 3}
+  - {fileID: 21300002, guid: 334d18a3b96b7204c8698ceea40bdd27, type: 3}
+  - {fileID: 21300004, guid: 334d18a3b96b7204c8698ceea40bdd27, type: 3}
+  - {fileID: 21300006, guid: 334d18a3b96b7204c8698ceea40bdd27, type: 3}
+  - {fileID: 21300008, guid: 334d18a3b96b7204c8698ceea40bdd27, type: 3}
+  - {fileID: 21300010, guid: 334d18a3b96b7204c8698ceea40bdd27, type: 3}
 --- !u!50 &2697646901987267156
 Rigidbody2D:
   serializedVersion: 4
